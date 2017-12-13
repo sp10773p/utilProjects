@@ -1,6 +1,6 @@
-package java8;
+package test.java8;
 
-import org.testng.annotations.Test;
+import org.junit.Test;
 
 public class CalculatorServieTest {
 

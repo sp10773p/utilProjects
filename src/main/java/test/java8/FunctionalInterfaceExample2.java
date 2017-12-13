@@ -1,6 +1,4 @@
-package java8;
-
-import org.h2.store.Data;
+package test.java8;
 
 import java.math.BigDecimal;
 

@@ -1,4 +1,4 @@
-package java8;
+package test.java8;
 
 public class OopAnotherExample {
     public static void main(String[] args) {

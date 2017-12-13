@@ -1,4 +1,4 @@
-package java8;
+package test.java8;
 /**
  * Function - apply 인자를 받아 처리후 리턴
  * Consumer - accept 인자를 받아 처리
