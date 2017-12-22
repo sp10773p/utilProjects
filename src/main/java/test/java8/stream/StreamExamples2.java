@@ -2,10 +2,9 @@ package test.java8.stream;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.Optional;
 
 /**
- * Stream 기초
+ * Stream 기초 - Stream vs 예전방식
  */
 public class StreamExamples2 {
 
@@ -29,18 +28,13 @@ public class StreamExamples2 {
 
         // Stream
         System.out.println("Functional Result : " +
-            numbers.stream()
-                .filter(number -> number > 3 && number < 9)
-                .map(number -> number * 2)
-                .filter(number -> number > 10)
-                .findFirst() // return type = Optional : null일때 Optional.empty를 return
-                .get()
+                numbers.stream()
+                        .filter(number -> number > 3 && number < 9)
+                        .map(number -> number * 2)
+                        .filter(number -> number > 10)
+                        .findFirst() // return type = Optional : null일때 Optional.empty를 return
+                        .get()
         );
-
-        // TODO 모던 자바 (자바8) 못다한 이야기 - 08 Stream API - 03 Stream API 02 - Stream vs 예전방식
-
-
-
 
         /*
         outerloop:
@@ -56,5 +50,6 @@ public class StreamExamples2 {
             System.out.println("Done");
             */
     }
+
 }
 
