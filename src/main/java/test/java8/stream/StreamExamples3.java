@@ -82,6 +82,10 @@ public class StreamExamples3 {
                         .findFirst()    // Optional[128]
         );
 
-        // TODO Stream API 03 - 기초
+        System.out.println("filter(i -> i > 3).count() = " +
+                Stream.of(1, 2, 3, 4, 5)
+                        .filter(i -> i > 3)
+                        .count()
+        );
     }
 }
