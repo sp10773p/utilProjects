@@ -51,6 +51,32 @@ public class StreamExamples4 {
                     .map(product -> product.getPrice())
                     .reduce(BigDecimal.ZERO, (price1, price2) -> price1.add(price2))
         );
+
+        System.out.println("\n=========================================\n");
+        System.out.println("Total Price of Procucts.price >= 30: " +
+            products.stream()
+                    .filter(product -> product.getPrice().compareTo(new BigDecimal("30")) >= 0)
+                    .map(product -> product.getPrice())
+                    .reduce(BigDecimal.ZERO, (price1, price2) -> price1.add(price2))
+        );
+
+        System.out.println("\n=========================================\n");
+        System.out.println("# of Procucts.price >= 30: " +
+            products.stream()
+                    .filter(product -> product.getPrice().compareTo(new BigDecimal("30")) >= 0)
+                    .count()
+        );
+
+
+        final OrderedItem item1 = new OrderedItem(1L, products.get(0), 1);
+        final OrderedItem item2 = new OrderedItem(2L, products.get(2), 3);
+        final OrderedItem item3 = new OrderedItem(3L, products.get(4), 10);
+
+        final Order order = new Order(1L, Arrays.asList(item1, item2, item3));
+
+        System.out.println("\n=========================================\n");
+        System.out.println("order.totalPrice(): " + order.totalPrice());
+
     }
 }
 
@@ -75,11 +101,22 @@ class OrderedItem {
     private Long id;
     private Product product;
     private int quantity;
+
+    public BigDecimal getTotalPricce(){
+        return product.getPrice().multiply(new BigDecimal(quantity));
+    }
 }
 
 @AllArgsConstructor
 @Data
 class Order {
     private Long id;
+    private List<OrderedItem> items;
+
+    public BigDecimal totalPrice(){
+        return items.stream()
+                .map(item -> item.getTotalPricce())
+                .reduce(BigDecimal.ZERO, (price1, price2) -> price1.add(price2));
+    }
 
 }
