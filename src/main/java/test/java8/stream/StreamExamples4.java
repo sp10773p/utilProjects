@@ -1,6 +1,5 @@
 package test.java8.stream;
 
-import com.sun.org.apache.xpath.internal.SourceTree;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
@@ -8,7 +7,6 @@ import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.IntStream;
-import java.util.stream.Stream;
 
 import static java.util.stream.Collectors.*;
 
