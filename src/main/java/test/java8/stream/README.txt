@@ -14,3 +14,8 @@
                   즉, array.length = 100,000 인데, 이게 꽉차면 그후에 element 1개만
                   더 추가를 해도 ArrayList의 내부크기는
                   100,000 * 1.5 = 150,000 (즉, array length : 100,000 => 150,000)
+                 
+                 
+4. closure
+	- this 접근 차이
+	- method 접근 차이
